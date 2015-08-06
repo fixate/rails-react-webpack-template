@@ -1,0 +1,21 @@
+---
+base: &base
+  name: AppName
+  og:
+    site_name: AppName
+    image:
+    type: website
+development:
+  <<: *base
+  site_contact: ['developers@fixate.it', 'Dev Contact']
+  admin_contact: ['developers@fixate.it', 'Dev admin']
+test:
+  <<: *base
+  site_contact: ['developers@fixate.it', 'Dev Contact']
+  admin_contact: ['developers@fixate.it', 'Dev Contact']
+production:
+  <<: *base
+  ga_uacode: '...'
+  ga_wmt_meta: '...'
+  site_contact: ['support@jurisfy.com', 'Jurisfy']
+  admin_contact: ['hello@jurisfy.com', 'Jurisfy']

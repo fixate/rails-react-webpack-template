@@ -1,0 +1,35 @@
+doctype html
+erb:
+  <!--[if lte IE 9]> <html class="ie ie9 oldie"> <![endif]-->
+  <!--[if gt IE 9]><!-->  <html> <!--<![endif]-->
+head
+  title
+    = page_title
+
+  = render_page_description_meta_tag
+  = render_page_keywords_meta_tag
+
+  meta name="viewport" content="width=device-width, initial-scale=1"
+
+  = render_page_image_link_tag
+
+  == yield :head
+
+  = stylesheet_link_tag "style", media: "all"
+
+  == NewRelic::Agent.browser_timing_header rescue ''
+
+  = csrf_meta_tags
+body
+  /[if lte IE 9]
+    .alert_-danger
+      ' Your browser is really really old and outdated. You'll have a better experience
+      ' by updating to a
+      a> href="http://browsehappy.com" modern browser
+      ' .
+
+  main#main.area-content
+    == yield
+
+  = javascript_include_tag 'shared-bundle'
+  == yield :js_entrypoint
