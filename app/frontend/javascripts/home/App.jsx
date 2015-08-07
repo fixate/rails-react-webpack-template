@@ -1,12 +1,13 @@
 import Router from 'react-router'
-let RouteHandler = Router.RouteHandler;
+import PrimaryNav from '../components/PrimaryNav'
 
 class App extends React.Component {
   render() {
     return (
       <div>
-        <p>APP</p>
-        <RouteHandler />
+        <p>Menu</p>
+        <PrimaryNav />
+        <Router.RouteHandler />
       </div>
     );
   }

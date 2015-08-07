@@ -21,3 +21,5 @@
 /app/assets/stylesheets/*
 !*/.gitkeep
 /node_modules
+
+/public/assets/*

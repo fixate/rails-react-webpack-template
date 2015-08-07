@@ -44,7 +44,7 @@ var config = module.exports = {
   }),
 
   new webpack.ProvidePlugin({
-    React: 'react'
+    React: 'react/addons'
   }),
 
     // we need this plugin to teach webpack how to find module entry points for bower files,

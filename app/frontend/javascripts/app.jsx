@@ -1,21 +1,19 @@
-import PrimaryNav from './components/nav/primary'
-import Router, { Route } from 'react-router'
-import App from './home/app';
-import Index from './home/index';
-import Message from './home/message';
+import Router, { Route } from 'react-router';
 
-PrimaryNav.mount();
+import App from './home/App';
+import Index from './home/Index';
+import Message from './home/Message';
 
 let routes = (
   <Route handler={App}>
-    <Route path="/" handler={Index} />
-    <Route path="messages/:id" handler={Message} />
+    <Route name="home" path="/" handler={Index} />
+    <Route name="messages" path="messages/:id" handler={Message} />
   </Route>
 );
 
 Router.run(routes, Router.HistoryLocation, (Root) => {
   React.render(
     <Root />,
-    document.querySelector('body .content')
+    document.getElementById('main')
   )
 });

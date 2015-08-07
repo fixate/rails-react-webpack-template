@@ -1,7 +1,4 @@
-import PrimaryNav from './components/nav/primary'
-import ContactPage from './contact/page'
-
-PrimaryNav.mount()
+import { ContactPage } from './contact/ContactPage'
 
 React.render(
   <ContactPage />,
